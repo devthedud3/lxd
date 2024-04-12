@@ -1,9 +1,9 @@
 import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 type ParamType = {};
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
   try {
     console.log("here");
     return NextResponse.json({ message: "working" });
