@@ -1,12 +1,12 @@
-import { NextApiRequest } from "next";
+import { pool } from "@/app/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
-type ParamType = {};
-
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    console.log("here");
-    return NextResponse.json({ message: "working" });
+    const { rows } = await pool.query("SELECT * FROM SHOP");
+    if (rows.length == 0)
+      throw new Error("There were issues retrieving shop data.");
+    return NextResponse.json({ items: rows });
   } catch (e) {
     return NextResponse.json({ e });
   }
