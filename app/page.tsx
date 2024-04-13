@@ -6,8 +6,8 @@ import ImageCard from "./ui/components/image-card";
 export default function Home() {
   return (
     <main className="flex min-h-screen h-screen flex-col items-center p-0">
-      <Banner message="🎉🎉 Free shipping for our first 200 orders! 🎉🎉" />
-      <div className="flex flex-col h-full w-full px-10 pb-4">
+      <Banner show />
+      <div className="flex flex-col h-full w-full px-2 pb-4">
         <Header />
         <div className="flex h-full items-center justify-between w-full flex-wrap">
           <div className="flex w-fit flex-col justify-between px-3 mr-3 ">
@@ -23,7 +23,7 @@ export default function Home() {
                 Trends Meet Timeless
               </p>
               <div className="flex space-x-3">
-                <Button name="Shop Now" primary />
+                <Button name="Shop Now" primary route="/shop" />
                 <Button name="Learn More" />
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Home() {
               height={10}
               alt=""
             />
-            <div className="absolute inset-0 flex items-end justify-center p-6 ">
+            <div className="absolute inset-0 flex items-end justify-center p-10 ">
               <div className="flex flex-col p-10 bg-white border w-full justify-between">
                 <div className="flex w-full justify-between">
                   <p className="text-2xl mb-4 leading-tight font-bold">
