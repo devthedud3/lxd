@@ -16,7 +16,9 @@
 
 body {
   color: var(--text-color);
-  background: var(--background-color)
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
 }
 
 @layer utilities {
