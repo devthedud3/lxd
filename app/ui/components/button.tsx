@@ -20,7 +20,7 @@ export default function Button({
   route,
 }: ButtonProps) {
   const router = useRouter();
-  const color = primary && "bg-amber-300 border-amber-300 ";
+  const color = primary && "bg-amber-400 border-amber-300 ";
   const a = animate && "hover:scale-105 ";
 
   function handleClick() {
