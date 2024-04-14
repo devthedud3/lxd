@@ -1,37 +1,30 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Card from "./card";
 
 interface ItemList {
   category?: string;
 }
 
-async function getShop() {
-  try {
-    const response = await fetch(
-      `${
-        process.env.NODE_ENV == "development"
-          ? process.env.LOCAL_URL
-          : process.env.POSTGRES_HOST
-      }/api/shop`,
-      {
+export function CardList({}: ItemList) {
+  const [shop, setShop] = useState<any>([]);
+
+  useEffect(() => {
+    async function getShop() {
+      const response = await fetch("/api/shop", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+          cache: "no-store",
         },
-      }
-    );
+      });
 
-    const { items } = await response.json();
-    return items;
-  } catch (e) {
-    console.log(e);
-    return [];
-  }
-}
-
-export async function CardList({}: ItemList) {
-  const shop = await getShop();
-  console.log(shop);
+      const { items } = await response.json();
+      return items;
+    }
+    getShop().then((items) => setShop(items));
+  }, []);
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
