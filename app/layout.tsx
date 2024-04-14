@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import "./ui/globals.css";
+import { Banner, Navbar } from "./ui/components";
+import { Suspense } from "react";
+
 import { poppins } from "./ui/fonts";
-import { Layout } from "./ui/components";
+import "./ui/globals.css";
 
 export const metadata: Metadata = {
   title: "LXD",
@@ -15,8 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className} suppressHydrationWarning>
-        <Layout>{children}</Layout>
+      <body
+        className={`${poppins.className} flex flex-col h-screen w-full justify-between items-center`}
+        suppressHydrationWarning
+      >
+        <Banner show />
+        <Suspense fallback={<div>...Loading</div>} />
+        <div className="w-full mt-10 px-10 pb-1 border-b">
+          <Navbar />
+        </div>
+        <main className={`flex flex-col px-32 flex-wrap h-full`}>
+          {children}
+        </main>
       </body>
     </html>
   );
