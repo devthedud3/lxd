@@ -7,7 +7,7 @@ interface ItemList {
   category?: string;
 }
 
-export function CardList({ category }: ItemList) {
+export function CardList({}: ItemList) {
   const [shop, setShop] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const items: any = [];
