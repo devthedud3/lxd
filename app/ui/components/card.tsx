@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 type ItemProps = {
@@ -17,10 +18,14 @@ export default function Card({
   price,
   category,
 }: ItemProps) {
+  const router = useRouter();
   return (
     <div
       className="min-w-[fit-content] cursor-pointer"
-      onClick={() => console.log(id)}
+      onClick={() => {
+        console.log(id);
+        router.push(`shop?id=${id}`, { scroll: false });
+      }}
     >
       <Image
         className=""
