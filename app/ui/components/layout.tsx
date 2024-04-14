@@ -2,11 +2,11 @@ import React, { Suspense } from "react";
 import Navbar from "./navbar";
 import Banner from "./banner";
 
-type LayoutProps = {
+const Layout = ({
+  children,
+}: Readonly<{
   children: React.ReactNode;
-  padded?: boolean;
-};
-export default function Layout({ children, padded }: LayoutProps) {
+}>) => {
   return (
     <>
       <Banner show />
@@ -15,12 +15,10 @@ export default function Layout({ children, padded }: LayoutProps) {
           <Navbar />
         </div>
         <Suspense fallback={<div>...Loading</div>} />
-        <main
-          className={`flex flex-col ${padded ? "px-32" : "w-full"} flex-wrap`}
-        >
-          {children}
-        </main>
+        <main className={`flex flex-col px-32 flex-wrap`}>{children}</main>
       </div>
     </>
   );
-}
+};
+
+export default Layout;
