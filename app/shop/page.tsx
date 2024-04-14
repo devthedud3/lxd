@@ -1,10 +1,10 @@
 import { SHOP_CATEGORIES } from "../lib/constants";
 import { CardList } from "../ui/components/card-list";
-import Layout from "../ui/components/layout";
+import { Layout } from "../ui/components";
 
 export default function Shop() {
   return (
-    <Layout>
+    <>
       <div className="flex h-full w-full "></div>
       <div className="flex flex-1 flex-col h-full w-full items-center">
         <div className="flex justify-center py-20">
@@ -25,6 +25,6 @@ export default function Shop() {
 
         <CardList category="sneakers" />
       </div>
-    </Layout>
+    </>
   );
 }
