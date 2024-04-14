@@ -4,7 +4,6 @@ import { CardList } from "../ui/components/card-list";
 export default function Shop() {
   return (
     <>
-      <div className="flex h-full w-full "></div>
       <div className="flex flex-1 flex-col h-full w-full items-center">
         <div className="flex justify-center py-20">
           <h1 className="text-3xl ">FIND BY CATEGORY</h1>
@@ -22,7 +21,7 @@ export default function Shop() {
           })}
         </div>
 
-        <CardList category="sneakers" />
+        <CardList />
       </div>
     </>
   );
