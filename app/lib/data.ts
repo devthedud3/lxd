@@ -1,10 +1,7 @@
-let url =
-  process.env.NODE_ENV == "development"
-    ? "http://localhost:3000"
-    : "lxd-git-main-coreycushnies-projects.vercel.app";
+let url = process.env.NODE_ENV == "development" && "http://localhost:3000";
 
 export const getShop = async () => {
-  const response = await fetch(`${url}/api/shop`, {
+  const response = await fetch(`${url || ""}/api/shop`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -17,7 +14,7 @@ export const getShop = async () => {
 };
 
 export const getItemById = async (query: string) => {
-  const response = await fetch(`${url}/api/shop/${query}`, {
+  const response = await fetch(`${url || ""}/api/shop/${query}`, {
     method: "GET",
     headers: {
       cache: "no-store",

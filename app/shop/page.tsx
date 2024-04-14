@@ -1,6 +1,5 @@
 import { SHOP_CATEGORIES } from "../lib/constants";
 import { CardList } from "../ui/components/card-list";
-import { Layout } from "../ui/components";
 
 export default function Shop() {
   return (
