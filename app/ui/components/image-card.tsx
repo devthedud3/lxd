@@ -3,7 +3,8 @@ import React from "react";
 
 type ImageCardProps = {
   src: string;
-  size: number;
+  height: number;
+  width: number;
   headline?: string;
   details?: string;
   additionalTailwindClasses?: string;
@@ -12,7 +13,8 @@ type ImageCardProps = {
 
 export default function ImageCard({
   src,
-  size,
+  height,
+  width,
   headline,
   details,
   additionalTailwindClasses,
@@ -27,8 +29,8 @@ export default function ImageCard({
       <Image
         className="block"
         src={src}
-        width={size}
-        height={size}
+        height={height}
+        width={width}
         alt={headline || src}
         style={{ width: "auto" }}
         priority
