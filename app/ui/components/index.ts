@@ -1,6 +1,6 @@
-import Header from "./header";
+import Navbar from "./navbar";
 import Banner from "./banner";
 import Button from "./button";
-import { Logo } from "./logo";
+import Logo from "./logo";
 
-export { Header, Banner, Button, Logo };
+export { Navbar, Banner, Button, Logo };
