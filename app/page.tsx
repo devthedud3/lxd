@@ -3,10 +3,9 @@ import { Button } from "./ui/components";
 import { FiArrowUpRight } from "react-icons/fi";
 import ImageCard from "./ui/components/image-card";
 
-
 export default function Home() {
   return (
-    <div className="flex h-full justify-between w-full flex-wrap">
+    <div className="flex h-full justify-between w-full flex-wrap p-4">
       <div className="flex w-fit flex-col justify-between px-3 ">
         <div className="flex flex-col w-full py-10 ">
           <div className="block w-fit">
