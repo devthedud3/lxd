@@ -2,11 +2,11 @@ import React, { Suspense } from "react";
 import Navbar from "./navbar";
 import Banner from "./banner";
 
-type LayoutInterface = {
+type LayoutProps = {
   children: React.ReactNode;
   padded?: boolean;
 };
-export default function Layout({ children, padded }: LayoutInterface) {
+export default function Layout({ children, padded }: LayoutProps) {
   return (
     <>
       <Banner show />
