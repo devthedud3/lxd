@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./ui/globals.css";
 import { poppins } from "./ui/fonts";
-import { Header } from "./ui/components";
 
 export const metadata: Metadata = {
   title: "LXD",
