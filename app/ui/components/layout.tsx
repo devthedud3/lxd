@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Navbar from "./navbar";
 import Banner from "./banner";
 
-interface LayoutInterface {
+type LayoutInterface = {
   children: React.ReactNode;
   padded?: boolean;
-}
+};
 export default function Layout({ children, padded }: LayoutInterface) {
   return (
     <>
@@ -14,6 +14,7 @@ export default function Layout({ children, padded }: LayoutInterface) {
         <div className="w-full mt-10 px-10 pb-1 border-b">
           <Navbar />
         </div>
+        <Suspense fallback={<div>...Loading</div>} />
         <main
           className={`flex flex-col ${padded ? "px-32" : "w-full"} flex-wrap`}
         >
