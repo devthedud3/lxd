@@ -1,7 +1,7 @@
 let url =
   process.env.NODE_ENV == "development"
     ? "http://localhost:3000"
-    : process.env.POSTGRES_HOST;
+    : "lxd-git-main-coreycushnies-projects.vercel.app";
 
 export const getShop = async () => {
   const response = await fetch(`${url}/api/shop`, {
