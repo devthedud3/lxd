@@ -5,3 +5,12 @@ export const BANNER_CATEGORIES = {
   discount_40: "🧭🧭 40% Discount on all orders this month! 🧭🧭",
   discount_50: "🧭🧭 50% Discount on all orders this month! 🧭🧭",
 };
+
+export const SHOP_CATEGORIES = [
+  "ALL COLLECTIONS",
+  "MEN",
+  "WOMEN",
+  "KIDS",
+  "HATS",
+  "SNEAKERS",
+];
