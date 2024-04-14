@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./ui/globals.css";
 import { poppins } from "./ui/fonts";
+import { Layout } from "./ui/components";
 
 export const metadata: Metadata = {
   title: "LXD",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className} suppressHydrationWarning>
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
