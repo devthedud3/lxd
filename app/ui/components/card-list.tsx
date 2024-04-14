@@ -1,33 +1,35 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "./card";
 
 interface ItemList {
   category?: string;
 }
 
-export function CardList({}: ItemList) {
-  const [shop, setShop] = useState<any>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const items: any = [];
-  useEffect(() => {
-    async function getShop() {
-      const response = await fetch("/api/shop", {
+async function getShop() {
+  try {
+    const response = await fetch(
+      `${
+        process.env.NODE_ENV == "development" && process.env.LOCAL_URL
+      }/api/shop`,
+      {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          cache: "no-store",
         },
-      });
+      }
+    );
 
-      const { items } = await response.json();
-      return items;
-    }
-    getShop()
-      .then((items) => setShop(items))
-      .finally(() => setLoading(false));
-  }, []);
+    const { items } = await response.json();
+    return items;
+  } catch (e) {
+    console.log(e);
+    return [];
+  }
+}
+
+export async function CardList({}: ItemList) {
+  const shop = await getShop();
+  console.log(shop);
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

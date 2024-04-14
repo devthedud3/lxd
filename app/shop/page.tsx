@@ -8,7 +8,7 @@ export default function Shop() {
         <div className="flex justify-center py-20">
           <h1 className="text-3xl ">FIND BY CATEGORY</h1>
         </div>
-        <div className="flex  space-x-10 py-6">
+        <div className="flex w-full space-x-10 py-6 text-xs">
           {SHOP_CATEGORIES.map((category, key) => {
             return (
               <p

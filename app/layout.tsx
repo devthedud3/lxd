@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} flex flex-col h-screen w-full justify-between items-center`}
+        className={`${poppins.className} flex flex-col h-screen items-center`}
         suppressHydrationWarning
       >
         <Banner show />
@@ -26,7 +26,9 @@ export default function RootLayout({
         <div className="w-full mt-10 px-10 pb-1 border-b">
           <Navbar />
         </div>
-        <main className={`flex flex-col px-32 flex-wrap h-full`}>
+        <main
+          className={`flex flex-col px-32 flex-wrap justify-center items-center`}
+        >
           {children}
         </main>
       </body>

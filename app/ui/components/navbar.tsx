@@ -5,7 +5,7 @@ import Logo from "./logo";
 
 export default function Navbar() {
   return (
-    <div className="flex w-full h-fit justify-between items-center">
+    <div className="flex h-full justify-between w-full flex-wrap ">
       <div className="transition ease-out duration-200 flex items-center space-x-2 hover:scale-105 cursor-pointer">
         <HiOutlineMenuAlt3 size={20} />
         <p>Menu</p>
