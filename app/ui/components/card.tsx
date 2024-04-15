@@ -1,36 +1,35 @@
-"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 
-type ItemProps = {
-  id: number;
+type CardProps = {
+  uuid: string;
   name: string;
-  imageurl: string;
+  image_url: string;
   price: string;
-  category: string;
+  subcategory: string;
 };
 
 export default function Card({
-  id,
+  uuid,
   name,
-  imageurl,
+  image_url,
   price,
-  category,
-}: ItemProps) {
+  subcategory,
+}: CardProps) {
   const router = useRouter();
+
   return (
     <div
-      className="min-w-[fit-content] cursor-pointer"
+      className="w-fit cursor-pointer"
       onClick={() => {
-        console.log(id);
-        router.push(`shop?id=${id}`, { scroll: false });
+        console.log(uuid);
       }}
     >
       <Image
         className=""
         alt={name}
-        src={imageurl}
+        src={image_url}
         height={1000}
         width={1000}
         style={{ width: "auto", height: "400px" }}
@@ -41,7 +40,7 @@ export default function Card({
         <p className="font-medium">{name}</p>
         <p className="">${price}</p>
       </div>
-      <p className="text-xs">{category}</p>
+      <p className="text-xs">{subcategory}</p>
     </div>
   );
 }
