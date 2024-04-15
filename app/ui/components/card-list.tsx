@@ -1,36 +1,54 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 import Card from "./card";
+import { SHOP_CATEGORIES } from "@/app/lib/constants";
+import { getSearchQuery, getShop } from "@/app/lib/data";
 
-interface ItemList {
-  category?: string;
-}
-
-export function CardList({}: ItemList) {
+export function CardList({ headline }: { headline: string }) {
   const [shop, setShop] = useState<any>([]);
+  const [category, setCategory] = useState<string>(SHOP_CATEGORIES[0]);
+  const [query, setQuery] = useState<string>(getSearchQuery());
+
+  const router = useRouter();
 
   useEffect(() => {
-    async function getShop() {
-      const response = await fetch("/api/shop", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          cache: "no-store",
-        },
-      });
+    router.push(query, { scroll: false });
+    getShop(query).then((items) => setShop(items));
+  }, [query]);
 
-      const { items } = await response.json();
-      return items;
-    }
-    getShop().then((items) => setShop(items));
-  }, []);
+  function updateCategories(e: string) {
+    setCategory(e);
+    setQuery(`?category=${e}`);
+  }
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {shop.map((val: any, key: number) => {
-        return <Card key={key} {...val} />;
-      })}
-    </div>
+    <>
+      <div className="flex justify-center pt-20 pb-4">
+        <h1 className="text-3xl ">{headline.toLocaleUpperCase()}</h1>
+      </div>
+      <div className="hidden space-x-3 py-6 text-xs md:flex">
+        {SHOP_CATEGORIES.map((cat, key) => {
+          return (
+            <div
+              className={`w-fit transition duration-200 ease-in border-b p-3 ${
+                category === cat ? "border-black" : "border-white"
+              } hover:bg-stone-200 cursor-pointer text-nowrap`}
+              key={key}
+              onClick={() => updateCategories(cat)}
+            >
+              {cat.toLocaleUpperCase()}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-20">
+        {shop.map((val: any, key: number) => {
+          return <Card key={key} {...val} />;
+        })}
+      </div>
+    </>
   );
 }
