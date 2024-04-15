@@ -2,12 +2,18 @@ import { pool } from "@/app/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, res: NextResponse) {
-  try {
-    const { rows } = await pool.sql`
-      SELECT * FROM SHOP ORDER BY category ASC`;
+  const url = new URL(req.url);
+  const category = url.searchParams.get("category");
 
-    if (rows.length == 0)
-      throw new Error("There were issues retrieving shop data.");
+  let query = "SELECT * FROM SHOP";
+  if (category && category !== "all collections") {
+    query += ` WHERE category = '${category}'`;
+  }
+
+  try {
+    const { rows } = await pool.query(`${query}`);
+
+    if (rows.length == 0) return NextResponse.json({ items: [] });
     return NextResponse.json({ items: rows });
   } catch (e) {
     return NextResponse.json({ e });
