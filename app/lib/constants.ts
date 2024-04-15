@@ -7,10 +7,10 @@ export const BANNER_CATEGORIES = {
 };
 
 export const SHOP_CATEGORIES = [
-  "ALL COLLECTIONS",
-  "MEN",
-  "WOMEN",
-  "KIDS",
-  "HATS",
-  "SNEAKERS",
+  "all collections",
+  "mens",
+  "womens",
+  "kids",
+  "hats",
+  "sneakers",
 ];
