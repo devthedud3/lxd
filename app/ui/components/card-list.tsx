@@ -14,7 +14,7 @@ export function CardList({
   search?: boolean;
 }) {
   const [shop, setShop] = useState<any>([]);
-  const [query, setQuery] = useState<string>(getSearchQuery());
+  const [query, setQuery] = useState<string>("/shop");
 
   const router = useRouter();
 
