@@ -1,7 +1,17 @@
 import React from "react";
 
-type Props = {};
+import { CardSlider } from "@/app/ui/components/card-slider";
+
+type Props = {
+  id: string;
+};
 
 export default function Mens(props: Props) {
-  return <div>Mens Page</div>;
+  const {
+    //@ts-ignore
+    searchParams: { id },
+  } = props;
+
+  console.log(id);
+  return <CardSlider />;
 }
