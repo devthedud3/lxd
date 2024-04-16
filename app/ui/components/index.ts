@@ -1,5 +1,5 @@
 //@ts-ignore
-import Status from "./_statusBadge";
+import Status from "./_StatusBadge";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Banner from "./banner";
