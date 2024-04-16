@@ -10,7 +10,7 @@ export default function CategoryMenu({ setQuery }: CategoryMenuType) {
 
   function updateCategories(e: string) {
     setCategory(e);
-    setQuery(`?category=${e}`);
+    setQuery(`/shop?category=${e}`);
   }
 
   return (
