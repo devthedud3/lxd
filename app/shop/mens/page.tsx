@@ -22,7 +22,7 @@ export default function Mens() {
       <div className="flex flex-col">
         <div className="flex justify-between">
           <div className="flex flex-col justify-end">
-            <h1 className="pb-4 font-bold">PRIMARK COLLECTION</h1>
+            <h1 className="pb-4 font-bold">CRWN COLLECTION</h1>
             <h1 className="text-lg font-small text-nowrap">{product?.name}</h1>
           </div>
           <div className="flex w-full items-center justify-center">
