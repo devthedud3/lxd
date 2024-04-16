@@ -6,8 +6,11 @@ import Logo from "./logo";
 export default function Navbar() {
   return (
     <div className="flex h-full justify-between w-full flex-wrap ">
-      <div className="transition ease-out duration-200 flex items-center space-x-2 hover:scale-105 cursor-pointer flex-1">
-        <HiOutlineMenuAlt3 size={20} />
+      <div className="flex items-center space-x-2 cursor-pointer flex-1">
+        <HiOutlineMenuAlt3
+          className="transition ease-out duration-200 cursor-pointer hover:scale-110"
+          size={20}
+        />
         <p>Menu</p>
       </div>
 
