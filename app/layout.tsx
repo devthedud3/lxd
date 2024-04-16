@@ -28,7 +28,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         <main
-          className={`flex flex-col p-2 md:px-32 flex-wrap  justify-center items-center`}
+          className={`flex flex-col p-2 md:px-32 flex-wrap pb-0  justify-center items-center`}
         >
           {children}
         </main>
