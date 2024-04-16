@@ -2,11 +2,17 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import Card from "./card";
-import { getSearchQuery, getShop } from "@/app/lib/data";
+import { ShopAPI, getSearchQuery } from "@/app/lib/data";
 import CategoryMenu from "./categories-menu";
+import MiniCard from "./card-mini";
 
-export function CardList({ headline }: { headline: string }) {
+export function CardList({
+  headline,
+  search,
+}: {
+  headline?: string;
+  search?: boolean;
+}) {
   const [shop, setShop] = useState<any>([]);
   const [query, setQuery] = useState<string>(getSearchQuery());
 
@@ -14,19 +20,22 @@ export function CardList({ headline }: { headline: string }) {
 
   useEffect(() => {
     router.push(query, { scroll: false });
-    getShop(query).then((items) => setShop(items));
+    ShopAPI(query).then((items) => setShop(items));
   }, [query]);
 
   return (
     <>
-      <div className="flex justify-center pt-20 pb-4">
-        <h1 className="text-3xl ">{headline.toLocaleUpperCase()}</h1>
-      </div>
-      <CategoryMenu setQuery={setQuery} />
+      {headline && (
+        <div className="flex justify-center pt-20 pb-4">
+          <h1 className="text-3xl ">{headline.toLocaleUpperCase()}</h1>
+        </div>
+      )}
+
+      {search && <CategoryMenu setQuery={setQuery} />}
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-20">
         {shop.map((val: any, key: number) => {
-          return <Card key={key} {...val} />;
+          return <MiniCard key={key} {...val} />;
         })}
       </div>
     </>
