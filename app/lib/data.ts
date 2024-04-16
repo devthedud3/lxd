@@ -1,7 +1,6 @@
-export async function getShop(e?: string) {
-  let reloadUrl = getSearchQuery();
+export async function ShopAPI(e?: string) {
   try {
-    const response = await fetch(`/api/shop${e || reloadUrl}`, {
+    const response = await fetch(`/api/${e || getSearchQuery()}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -9,6 +8,7 @@ export async function getShop(e?: string) {
       },
     });
     const { items } = await response.json();
+
     return items;
   } catch (e) {
     return Response.json({ message: e }, { status: 500 });
@@ -16,9 +16,9 @@ export async function getShop(e?: string) {
 }
 
 export function getSearchQuery() {
-  let query = "";
   if (typeof window !== "undefined") {
-    query = window.location.search;
+    const { pathname, search } = window.location;
+    return pathname + search;
   }
-  return query;
+  return "";
 }
