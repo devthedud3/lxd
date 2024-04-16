@@ -1,25 +1,19 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Image from "next/image";
 
-import { ShopAPI } from "@/app/lib/data";
-
-export function CardSlider({
-  headline,
-  search,
-}: {
-  headline?: string;
-  search?: boolean;
-}) {
-  const [product, setProduct] = useState<Object>();
-  useEffect(() => {
-    ShopAPI().then((items) => setProduct(items));
-  }, []);
-
-  console.log(product);
+export function CardSlider({ image }: { image?: string }) {
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-20">
-        Slider
+      <div className="flex w-full">
+        <Image
+          className="block"
+          src={image || "/homepage/logo.svg"}
+          alt={image || ""}
+          width={1000}
+          height={1000}
+          style={{ width: "auto" }}
+          priority
+        />
       </div>
     </>
   );
