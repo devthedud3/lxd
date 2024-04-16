@@ -23,6 +23,22 @@ export const TEST_DETAILS = [
   "Many sweatpants joggers come with ribbed cuffs at the ankles. These cuffs help keep the pants in place and prevent them from riding up during activities.",
 ];
 
+export const FOOTER_COMPANY = [
+  "About Us",
+  "Careers",
+  "Privacy Policy",
+  "Terms",
+  "Cookies",
+];
+
+export const FOOTER_CUSTOMER_SERVICE = [
+  "Contact",
+  "Partners",
+  "FAQ",
+  "Shipping",
+  "Returns",
+];
+
 export const SHIPPING_DETAILS = [
   "Standard processing time for orders take 5-7 business days to be processed and shipped.",
   "Express processing time for orders take 1-3 business days to be processed and shipped.",
