@@ -1,12 +1,12 @@
 import React from "react";
 import { RiArrowDropRightFill } from "react-icons/ri";
 
-type ButtonProps = {
+type ListProps = {
   headline?: string;
   details: string[];
 };
 
-export default function List({ headline, details }: ButtonProps) {
+export default function List({ headline, details }: ListProps) {
   return (
     <div className="flex w-full flex-col">
       <h1 className="font-medium py-2 w-full border-b text-sm">{headline}</h1>
