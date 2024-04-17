@@ -29,7 +29,7 @@ export default function MiniCard({
       <Image
         className=""
         alt={name}
-        src={image_url}
+        src={`${image_url}1?$productimages-largedesktop$&fmt=auto`}
         height={1000}
         width={1000}
         style={{ width: "300px", height: "auto" }}
