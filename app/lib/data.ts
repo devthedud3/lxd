@@ -1,3 +1,5 @@
+import { getSearchQuery } from "./utils";
+
 export async function ShopAPI(e?: string) {
   try {
     const response = await fetch(`/api/${e || getSearchQuery()}`, {
@@ -13,12 +15,4 @@ export async function ShopAPI(e?: string) {
   } catch (e) {
     return Response.json({ message: e }, { status: 500 });
   }
-}
-
-export function getSearchQuery() {
-  if (typeof window !== "undefined") {
-    const { pathname, search } = window.location;
-    return pathname + search;
-  }
-  return "";
 }
