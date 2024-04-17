@@ -11,7 +11,6 @@ export function CardSlider({
 }) {
   return (
     <div className="flex w-full items-center justify-center">
-      <Suspense fallback={<Loading />} />
       <Image
         className="block"
         src={image || "/homepage/logo.svg"}
