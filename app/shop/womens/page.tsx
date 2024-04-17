@@ -25,7 +25,6 @@ export default function Womens() {
           <div className="flex pb-10">
             <Suspense fallback={<Loading />} />
             {[1, 2, 3, 4].map((val: number, index: number) => {
-              console.log("here", val);
               return (
                 <CardSlider
                   key={index}
