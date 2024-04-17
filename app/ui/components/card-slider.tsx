@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import Loading from "@/app/loading";
 
-export function CardSlider({
+export default function CardSlider({
   image,
   height,
 }: {
@@ -10,7 +10,7 @@ export function CardSlider({
   height?: string;
 }) {
   return (
-    <div className="flex w-full items-center justify-center">
+    <div className="flex w-fit h-fit items-center justify-center">
       <Image
         className="block"
         src={image || "/homepage/logo.svg"}
