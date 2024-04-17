@@ -12,9 +12,9 @@ type FooterProps = {
   details?: string[];
 };
 
-export default function Footer({ headline, details }: FooterProps) {
+export default function Footer({}: FooterProps) {
   return (
-    <div className="static bottom-0 flex w-screen justify-between space-x-24 bg-stone-100 p-10">
+    <div className="static bottom-0 flex w-full justify-between bg-stone-100 p-10">
       <div className="flex h-full w-32 justify-between flex-col">
         <Logo size={200} />
         <p className="text-xs">Fashion Fusion Wear Your Masterpiece.</p>
