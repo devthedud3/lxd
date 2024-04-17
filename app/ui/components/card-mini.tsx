@@ -23,8 +23,8 @@ export default function MiniCard({
 }: CardProps) {
   return (
     <Link
-      className="w-fit flex flex-col h-full p-3 rounded cursor-pointer transition duration-100 ease-in border border-white hover:scale-105 hover:border-stone-400"
-      href={`/shop/${category}?id=${uuid}`}
+      className="w-fit flex flex-col h-full p-3 rounded cursor-pointer transition duration-100 ease-in border border-white hover:scale-105 hover:border-stone-200"
+      href={`/shop/product?id=${uuid}`}
     >
       <Image
         className=""
