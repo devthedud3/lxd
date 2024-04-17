@@ -33,7 +33,7 @@ export default function Button({
         href={route || ""}
       >
         {icon && icon}
-        {name && <p className="text-sm text-nowrap px-8">{name}</p>}
+        {name && <p className="text-sm text-nowrap px-8 ">{name}</p>}
       </Link>
     </>
   );
