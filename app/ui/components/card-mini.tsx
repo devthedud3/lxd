@@ -23,7 +23,7 @@ export default function MiniCard({
 }: CardProps) {
   return (
     <Link
-      className="w-fit cursor-pointer"
+      className="w-fit flex flex-col h-full p-3 rounded cursor-pointer transition duration-100 ease-in border border-white hover:scale-105 hover:border-stone-400"
       href={`/shop/${category}?id=${uuid}`}
     >
       <Image
@@ -32,11 +32,11 @@ export default function MiniCard({
         src={image_url}
         height={1000}
         width={1000}
-        style={{ width: "auto", height: "400px" }}
+        style={{ width: "300px", height: "auto" }}
         priority
       />
 
-      <div className="w-full py-3 flex bg-white text-xs justify-between">
+      <div className="w-full py-3 flex text-xs justify-between">
         <p className="font-medium">{name}</p>
         <p className="">${price}</p>
       </div>
