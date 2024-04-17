@@ -30,9 +30,9 @@ export default function Mens() {
         <>
           <div className="flex pb-10">
             {[1, 2, 3, 4].map((val: number, index: number) => {
-              console.log("here", val);
               return (
                 <CardSlider
+                  key={index}
                   image={`${product?.image_url}${
                     index + 1
                   }?$productimages-largedesktop$&fmt=auto`}
