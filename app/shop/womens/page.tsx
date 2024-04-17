@@ -28,6 +28,7 @@ export default function Womens() {
               console.log("here", val);
               return (
                 <CardSlider
+                  key={index}
                   image={`${product?.image_url}${
                     index + 1
                   }?$productimages-largedesktop$&fmt=auto`}
