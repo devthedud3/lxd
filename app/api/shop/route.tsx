@@ -7,7 +7,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   let query = "SELECT * FROM SHOP";
   if (category && category !== "all collections") {
-    query += ` WHERE category = '${category}'`;
+    query += ` WHERE category = '${category}' LIMIT 4`;
   }
 
   try {
