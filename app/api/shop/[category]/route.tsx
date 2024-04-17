@@ -13,10 +13,9 @@ export async function GET(
   const { category } = context.params;
 
   try {
-    const { rows } = await pool.query(
-      "SELECT * FROM SHOP WHERE uuid = $1 AND category = $2",
-      [id, category]
-    );
+    const { rows } = await pool.query("SELECT * FROM SHOP WHERE uuid = $1", [
+      id,
+    ]);
     if (rows.length == 0) throw new Error("There were issues retrieving item.");
     return NextResponse.json({ items: rows });
   } catch (e) {
