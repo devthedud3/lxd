@@ -29,9 +29,16 @@ export default function Mens() {
       ) : (
         <>
           <div className="flex pb-10">
-            <CardSlider image={product?.image_url} />
-            <CardSlider image={product?.image_url} />
-            <CardSlider image={product?.image_url} />
+            {[1, 2, 3, 4].map((val: number, index: number) => {
+              console.log("here", val);
+              return (
+                <CardSlider
+                  image={`${product?.image_url}${
+                    index + 1
+                  }?$productimages-largedesktop$&fmt=auto`}
+                />
+              );
+            })}
           </div>
 
           <div className="flex flex-col w-inherit pb-10">
