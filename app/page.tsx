@@ -5,7 +5,7 @@ import ImageCard from "./ui/components/image-card";
 
 export default function Home() {
   return (
-    <div className="flex h-full justify-between w-full flex-wrap">
+    <div className="flex h-full justify-between md:px-32 w-full flex-wrap">
       <div className="flex w-fit flex-col justify-between px-3 ">
         <div className="flex flex-col w-full py-10 ">
           <div className="block w-fit">
