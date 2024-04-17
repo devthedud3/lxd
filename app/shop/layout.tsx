@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Banner, Footer, Navbar, Status } from "../ui/components";
-import Breadcrumbs from "../ui/components/breadcrumbs";
+import { Banner, Footer, Navbar, Status, History } from "../ui/components";
+import Breadcrumbs from "../ui/components/button-back";
 
 export const metadata: Metadata = {
   title: "LXD",
@@ -14,8 +14,8 @@ export default function Layout({
 }>) {
   return (
     <div className="flex flex-col h-fit">
-      <div className="md:px-32 ">
-        <Breadcrumbs />
+      <div className="px-4 md:px-32 ">
+        <History />
         {children}
       </div>
       <Footer />
