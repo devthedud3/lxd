@@ -13,12 +13,12 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div className="flex flex-col h-fit">
       <div className="md:px-32 ">
         <Breadcrumbs />
         {children}
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
