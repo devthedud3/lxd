@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
+import Loading from "@/app/loading";
 
 export function CardSlider({
   image,
@@ -10,6 +11,7 @@ export function CardSlider({
 }) {
   return (
     <div className="flex w-full items-center justify-center">
+      <Suspense fallback={<Loading />} />
       <Image
         className="block"
         src={image || "/homepage/logo.svg"}
