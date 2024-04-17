@@ -10,6 +10,7 @@ type ButtonProps = {
   //@ts-ignore
   icon?: IconType;
   route?: string;
+  additionalTWProps?: string;
 };
 
 export default function Button({
@@ -18,6 +19,7 @@ export default function Button({
   primary,
   icon,
   route,
+  additionalTWProps,
 }: ButtonProps) {
   const color = primary
     ? "bg-amber-400 border-amber-300 "
@@ -27,7 +29,7 @@ export default function Button({
   return (
     <>
       <Link
-        className={`transition duration-100 ease-in ${a} hover:border-black w-fit flex border ${color} h-fit p-3 cursor-pointer`}
+        className={`transition duration-100 ease-in ${a} hover:border-black w-fit flex border ${color} h-fit p-3 cursor-pointer ${additionalTWProps}`}
         href={route || ""}
       >
         {icon && icon}
