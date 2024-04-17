@@ -11,7 +11,7 @@ type FooterProps = {
 
 export default function FooterItems({ headline, logo, details }: FooterProps) {
   return (
-    <div className="flex ">
+    <div className="flex">
       {logo && <Logo size={200} />}
       <div className="flex h-full w-full flex-col">
         <h1 className="mb-2 font-semibold">{headline?.toLocaleUpperCase()}</h1>
@@ -19,7 +19,7 @@ export default function FooterItems({ headline, logo, details }: FooterProps) {
           return (
             <Link
               key={key}
-              className="text-xs pt-3"
+              className="text-xs pt-2"
               href={`/${value.toLocaleLowerCase()}`}
             >
               {value}
