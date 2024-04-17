@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Button,
@@ -11,6 +11,7 @@ import {
 import { SHIPPING_DETAILS } from "@/app/lib/constants";
 import { ShopAPI } from "@/app/lib/data";
 import Loading from "@/app/loading";
+import { RiShoppingCartLine } from "react-icons/ri";
 
 export default function Mens() {
   const [product, setProduct] = useState<Item>();
@@ -28,7 +29,7 @@ export default function Mens() {
         <Loading />
       ) : (
         <>
-          <div className="flex pb-10">
+          <div className="flex pb-10 flex-wrap items-center justify-center gap-y-2 md:gap-0">
             {[1, 2, 3, 4].map((val: number, index: number) => {
               return (
                 <CardSlider
@@ -41,7 +42,7 @@ export default function Mens() {
             })}
           </div>
 
-          <div className="flex flex-col w-inherit pb-10">
+          <div className="flex flex-col w-full pb-10">
             <div className="flex w-full justify-between">
               <div className="flex flex-col justify-end">
                 <h1 className="pb-4 font-bold">CRWN COLLECTION</h1>
@@ -49,11 +50,15 @@ export default function Mens() {
                   {product?.name}
                 </h1>
               </div>
-              <div className="flex w-full items-center justify-center">
-                <p className="border p-3">Size</p>
-              </div>
-              <div className="flex items-center">
+              <div className="hidden md:flex items-center">
                 <Button primary name="Add to Cart" />
+              </div>
+              <div className="flex items-end md:hidden">
+                <Button
+                  icon={<RiShoppingCartLine />}
+                  primary
+                  additionalTWProps={"rounded-full"}
+                />
               </div>
             </div>
             <ProductDetails price={product?.price} />
