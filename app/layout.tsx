@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Banner, Footer, Navbar, Status } from "./ui/components";
-import { Suspense } from "react";
+import { Banner, Navbar, Status } from "./ui/components";
 
 import { poppins } from "./ui/fonts";
 import "./ui/globals.css";
@@ -31,7 +30,6 @@ export default function RootLayout({
         >
           {children}
         </main>
-        {/* <Footer /> */}
       </body>
     </html>
   );
