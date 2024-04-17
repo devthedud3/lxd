@@ -4,11 +4,12 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import Banner from "./banner";
 import Button from "./button";
+
 import Logo from "./logo";
 import List from "./list";
 import ProductDetails from "./product-details";
-
-import { CardSlider } from "./card-slider";
+import CardSlider from "./card-slider";
+import History from "./button-back";
 
 export {
   Status,
@@ -20,4 +21,5 @@ export {
   List,
   ProductDetails,
   Footer,
+  History,
 };
