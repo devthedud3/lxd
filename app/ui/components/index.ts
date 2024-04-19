@@ -1,9 +1,9 @@
 //@ts-ignore
+import Banner from "./banner";
+import Button from "./button";
 import Status from "./_StatusBadge";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import Banner from "./banner";
-import Button from "./button";
 
 import Logo from "./logo";
 import List from "./list";
