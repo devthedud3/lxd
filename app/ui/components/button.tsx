@@ -22,14 +22,14 @@ export default function Button({
   additionalTWProps,
 }: ButtonProps) {
   const color = primary
-    ? "bg-amber-400 border-amber-300 "
-    : "bg-white border-stone-300 ";
+    ? "bg-amber-400 border-amber-400 "
+    : "bg-white border-stone-200 ";
   const a = animate && "hover:scale-105 ";
 
   return (
     <>
       <Link
-        className={`transition duration-100 ease-in ${a} hover:border-black w-fit flex border ${color} h-fit p-3 cursor-pointer ${additionalTWProps}`}
+        className={`transition duration-100 ease-in ${a} hover:border-black w-fit flex border-2 ${color} h-fit p-3 cursor-pointer ${additionalTWProps}`}
         href={route || ""}
       >
         {icon && icon}
