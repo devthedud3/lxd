@@ -10,6 +10,7 @@ import List from "./list";
 import ProductDetails from "./product-details";
 import CardSlider from "./card-slider";
 import History from "./button-back";
+import Form from "./form";
 
 export {
   Status,
@@ -22,4 +23,5 @@ export {
   ProductDetails,
   Footer,
   History,
+  Form,
 };
