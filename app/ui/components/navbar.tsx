@@ -18,14 +18,14 @@ export default function Navbar() {
 
       <div className="flex-1 flex justify-end">
         <div className="flex items-center space-x-6">
-          <RiSearch2Line
+          {/* <RiSearch2Line
             className="transition ease-out duration-200 cursor-pointer hover:scale-110"
             size={20}
           />
           <RiShoppingCartLine
             className="transition ease-out duration-200 cursor-pointer hover:scale-110"
             size={20}
-          />
+          /> */}
           <p className="transition ease-out duration-200 border-b border-white hover:border-black hover:scale-105 cursor-pointer">
             Register
           </p>
