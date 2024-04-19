@@ -27,7 +27,7 @@ export default function Navbar() {
             size={20}
           />
           <p className="transition ease-out duration-200 border-b border-white hover:border-black hover:scale-105 cursor-pointer">
-            Login
+            Register
           </p>
         </div>
       </div>
