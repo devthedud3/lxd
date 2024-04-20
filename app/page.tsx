@@ -11,8 +11,8 @@ export default function Home() {
           <div className="block w-fit">
             <p className="text-5xl mb-4 leading-tight font-bold ">
               FASHION{" "}
-              <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-amber-400 relative inline-block">
-                <span className="relative text-black">FUSION</span>
+              <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative inline-block">
+                <span className="relative text-white">FUSION</span>
               </span>
               <br /> WEAR YOUR MASTERPIECE
             </p>
@@ -65,7 +65,10 @@ export default function Home() {
                 TRENDING
                 <br /> COLLECTION
               </p>
-              <Button primary icon={<FiArrowUpRight size={30} />} />
+              <Button
+                primary
+                icon={<FiArrowUpRight color="white" size={30} />}
+              />
             </div>
             <p className="text-xs ">
               Discover Your Signature Style Unleash your Boldness. Where Trends
