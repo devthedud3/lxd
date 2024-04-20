@@ -8,7 +8,7 @@ interface ImageProps {
 }
 export default function Logo({ size }: ImageProps) {
   return (
-    <Link className="flex min-w-[fit-content] h-10 cursor-pointer" href="/">
+    <Link className="flex min-w-[fit-content] h-fit cursor-pointer" href="/">
       {/* <Image
         src="/homepage/logo.svg"
         width={size}
