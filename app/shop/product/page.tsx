@@ -49,7 +49,7 @@ export default function Products() {
               </div>
               <div className="flex items-end md:hidden">
                 <Button
-                  icon={<RiShoppingCartLine />}
+                  icon={<RiShoppingCartLine color="white" />}
                   primary
                   additionalTWProps={"rounded-full"}
                 />
