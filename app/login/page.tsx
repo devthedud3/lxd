@@ -7,9 +7,9 @@ type LoginProps = {};
 
 export default function Login({}: LoginProps) {
   return (
-    <div className="flex h-full w-full flex-col">
-      <div className="flex justify-between py-4">
-        <div className="relative flex h-full w-full rounded-full ">
+    <div className="flex h-full justify-center w-full flex-col">
+      <div className="flex flex-col md:flex-row justify-center py-4 space-y-4">
+        <div className="flex md:relative h-full w-full items-center">
           <Image
             className="block rounded-lg"
             src="/login/image.png"
@@ -21,17 +21,19 @@ export default function Login({}: LoginProps) {
               width: "auto",
             }}
           />
-          <div className="absolute inset-0 h-full w-full flex items-center justify-end">
+          <div className="hidden md:flex md:absolute inset-0 h-full w-full flex items-center justify-end">
             <div className="bg-white h-1/2 w-12 rounded-l-full" />
           </div>
         </div>
 
-        <div className="flex h-full w-full  flex-col px-36">
-          <div className="flex flex-col">
+        <div className="flex h-full w-full justify-center flex-col md:px-24">
+          <div className="flex flex-col pb-8">
             <Logo size={10} />
             <p className="text-xs w-full ">Discover your style</p>
           </div>
-          <h1 className="text-xl font-semibold w-full ">Create your account</h1>
+          <h1 className="text-xl font-semibold w-full pb-8">
+            Create your account
+          </h1>
           <Form
             categories={["Full_Name", "Email", "Password", "Confirm_Password"]}
           />
