@@ -14,7 +14,7 @@ export default function History({}: BreadcrumbsProps) {
 
   return (
     <div
-      className="transition durantion-100 hover:-translate-x-1 flex items-center space-x-4 cursor-pointer p-3 border w-fit"
+      className="transition durantion-100 hover:-translate-x-1 flex items-center space-x-4 cursor-pointer p-3 border h-fit w-fit"
       onClick={handleClick}
     >
       <GrPrevious />
