@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Banner, Navbar, Status } from "./ui/components";
+import { Banner, Navbar, Status } from "./(ui)/components";
 
-import { poppins } from "./ui/fonts";
-import "./ui/globals.css";
+import { poppins } from "./(ui)/fonts";
+import "./(ui)/globals.css";
 
 export const metadata: Metadata = {
   title: "LXD",
@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} flex flex-col h-screen items-center`}
+        className={`${poppins.className} flex flex-col h-screen items-center container`}
         suppressHydrationWarning
       >
-        <Status />
+        {/* <Status /> */}
         <Banner show />
         <div className="w-full mt-10 px-10 pb-1 border-b">
           <Navbar />
