@@ -1,6 +1,6 @@
 import React from "react";
-import { Form, Logo } from "../ui/components";
-import ImageCard from "../ui/components/image-card";
+import { Form, Logo } from "../(ui)/components";
+import ImageCard from "../(ui)/components/image-card";
 import Image from "next/image";
 
 type LoginProps = {};

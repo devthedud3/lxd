@@ -7,9 +7,9 @@ import {
   Footer,
   List,
   ProductDetails,
-} from "@/app/ui/components";
+} from "@/app/(ui)/components";
 import { SHIPPING_DETAILS } from "@/app/lib/constants";
-import { ShopAPI } from "@/app/lib/data";
+import { ShopAPI, SHOP_HOME } from "@/app/lib/data";
 import Loading from "@/app/loading";
 import { RiShoppingCartLine } from "react-icons/ri";
 
@@ -34,9 +34,7 @@ export default function Mens() {
               return (
                 <CardSlider
                   key={index}
-                  image={`${product?.image_url}${
-                    index + 1
-                  }?$productimages-largedesktop$&fmt=auto`}
+                  image={`${product?.image_url}1?$productimages-largedesktop$&fmt=auto`}
                 />
               );
             })}

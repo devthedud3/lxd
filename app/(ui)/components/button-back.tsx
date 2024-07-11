@@ -13,12 +13,10 @@ export default function History({}: BreadcrumbsProps) {
   }
 
   return (
-    <div
-      className="transition durantion-100 hover:-translate-x-1 flex items-center space-x-4 cursor-pointer p-3 border h-fit w-fit"
+    <GrPrevious
+      className="border p-2 m-8 rounded-full"
+      size={40}
       onClick={handleClick}
-    >
-      <GrPrevious />
-      <p className="pr-1">Previous</p>
-    </div>
+    />
   );
 }

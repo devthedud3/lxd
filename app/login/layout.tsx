@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Banner, Footer, Navbar, Status, History } from "../ui/components";
+import { Banner, Footer, Navbar, Status, History } from "../(ui)/components";
 
 export const metadata: Metadata = {
   title: "LXD",

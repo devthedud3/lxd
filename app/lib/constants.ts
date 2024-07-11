@@ -7,7 +7,7 @@ export const BANNER_CATEGORIES = {
 };
 
 export const SHOP_CATEGORIES = [
-  "all collections",
+  "",
   "mens",
   "womens",
   "kids",

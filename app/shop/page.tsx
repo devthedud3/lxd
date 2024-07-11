@@ -1,4 +1,4 @@
-import { CardList } from "../ui/components/card-list";
+import { CardList } from "../(ui)/components/card-list";
 
 export default function Shop() {
   return (

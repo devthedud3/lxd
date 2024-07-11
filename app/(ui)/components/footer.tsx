@@ -14,7 +14,7 @@ type FooterProps = {
 
 export default function Footer({}: FooterProps) {
   return (
-    <div className="static bottom-0 space-y-10 md:space-y-0 flex  w-full justify-between bg-stone-100 p-10 flex-row flex-wrap">
+    <div className="space-y-10 md:space-y-0 flex  w-full justify-between bg-stone-100 p-10 flex-row flex-wrap">
       <div className="flex h-fit w-full md:w-fit md:h-full w-32 justify-between flex-col">
         <Logo size={200} />
         <p className="text-xs py-4">Fashion Fusion Wear Your Masterpiece.</p>

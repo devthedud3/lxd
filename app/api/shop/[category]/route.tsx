@@ -1,4 +1,4 @@
-import { pool } from "@/app/lib/db";
+import { SHOP_HOME } from "@/app/lib/data";
 import { NextRequest, NextResponse } from "next/server";
 
 type ShopItemProps = {
@@ -10,12 +10,10 @@ export async function GET(
 ) {
   const url = new URL(req.url);
   const id = url.searchParams.get("id");
-  const { category } = context.params;
 
   try {
-    const { rows } = await pool.query("SELECT * FROM SHOP WHERE uuid = $1", [
-      id,
-    ]);
+    const rows = [SHOP_HOME.find((value) => value.uuid === id)];
+
     if (rows.length == 0) throw new Error("There were issues retrieving item.");
     return NextResponse.json({ items: rows });
   } catch (e) {

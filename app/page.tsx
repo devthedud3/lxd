@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Button } from "./ui/components";
+import { Button } from "./(ui)/components";
 import { FiArrowUpRight } from "react-icons/fi";
-import ImageCard from "./ui/components/image-card";
+import ImageCard from "./(ui)/components/image-card";
 
 export default function Home() {
   return (

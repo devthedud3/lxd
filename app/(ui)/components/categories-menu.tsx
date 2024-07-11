@@ -6,11 +6,14 @@ type CategoryMenuType = {
 };
 
 export default function CategoryMenu({ setQuery }: CategoryMenuType) {
-  const [category, setCategory] = useState<string>(SHOP_CATEGORIES[0]);
+  const [category, setCategory] = useState<string>(
+    SHOP_CATEGORIES[0] || "all collection"
+  );
 
   function updateCategories(e: string) {
     setCategory(e);
-    setQuery(`/shop?category=${e}`);
+    console.log(e);
+    setQuery(e);
   }
 
   return (
@@ -24,7 +27,7 @@ export default function CategoryMenu({ setQuery }: CategoryMenuType) {
             key={key}
             onClick={() => updateCategories(cat)}
           >
-            {cat.toLocaleUpperCase()}
+            {cat.toLocaleUpperCase() || "all collection".toLocaleUpperCase()}
           </div>
         );
       })}

@@ -1,7 +1,12 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 
-import { Button, CardSlider, List, ProductDetails } from "@/app/ui/components";
+import {
+  Button,
+  CardSlider,
+  List,
+  ProductDetails,
+} from "@/app/(ui)/components";
 import { SHIPPING_DETAILS } from "@/app/lib/constants";
 import { ShopAPI } from "@/app/lib/data";
 import Loading from "@/app/loading";

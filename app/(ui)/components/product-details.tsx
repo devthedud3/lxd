@@ -1,6 +1,6 @@
 import React from "react";
 
-import { List } from "@/app/ui/components";
+import { List } from "@/app/(ui)/components";
 import { TEST_DETAILS } from "@/app/lib/constants";
 
 export default function ProductDetails({ price }: { price?: string }) {

@@ -1,7 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { Button, CardSlider, List, ProductDetails } from "@/app/ui/components";
+import {
+  Button,
+  CardSlider,
+  List,
+  ProductDetails,
+} from "@/app/(ui)/components";
 import { SHIPPING_DETAILS } from "@/app/lib/constants";
 import { ShopAPI } from "@/app/lib/data";
 import Loading from "@/app/loading";
@@ -28,9 +33,7 @@ export default function Products() {
               return (
                 <CardSlider
                   key={index}
-                  image={`${product?.image_url}${
-                    index + 1
-                  }?$productimages-largedesktop$&fmt=auto`}
+                  image={`${product?.image_url[index]}?$productimages-largedesktop$&fmt=auto`}
                 />
               );
             })}
